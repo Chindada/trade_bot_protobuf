@@ -1,0 +1,57 @@
+syntax = "proto3";
+
+package snapshot_protobuf;
+
+option go_package = "pkg/models/snapshot";
+
+message SnapShotArrProto {
+    repeated SnapShotProto data = 1;
+}
+
+message SnapShotProto {
+    int64 ts                = 1;
+    string code             = 2;
+    string exchange         = 3;
+    double open             = 4;
+    double high             = 5;
+    double low              = 6;
+    double close            = 7;
+    string tick_type        = 8;
+    double change_price     = 9;
+    double change_rate      = 10;
+    string change_type      = 11;
+    double average_price    = 12;
+    int64 volume            = 13;
+    int64 total_volume      = 14;
+    int64 amount            = 15;
+    int64 total_amount      = 16;
+    double yesterday_volume = 17;
+    double buy_price        = 18;
+    double buy_volume       = 19;
+    double sell_price       = 20;
+    int64 sell_volume       = 21;
+    double volume_ratio     = 22;
+}
+
+// ts=1629901800000000000
+// code='2330'
+// exchange='TSE'
+// open=579.0
+// high=585.0
+// low=574.0
+// close=585.0
+// tick_type=<TickType.Buy: 'Buy'>
+// change_price=13.0
+// change_rate=2.27
+// change_type=<ChangeType.Up: 'Up'>
+// average_price=580.94
+// volume=210
+// total_volume=27504
+// amount=122850000
+// total_amount=15978217345
+// yesterday_volume=24844.0
+// buy_price=584.0
+// buy_volume=44.0
+// sell_price=585.0
+// sell_volume=436
+// volume_ratio=1.11

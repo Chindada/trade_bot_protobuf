@@ -1,0 +1,67 @@
+syntax = "proto3";
+
+package volume_rank_protobuf;
+
+option go_package = "pkg/models/volumerank";
+
+message VolumeRankArrProto {
+    repeated VolumeRankProto data = 1;
+}
+
+message VolumeRankProto {
+    string date            = 1;
+    string code            = 2;
+    string name            = 3;
+    int64 ts               = 4;
+    double open            = 5;
+    double high            = 6;
+    double low             = 7;
+    double close           = 8;
+    double price_range     = 9;
+    int64 tick_type        = 10;
+    double change_price    = 11;
+    int64 change_type      = 12;
+    double average_price   = 13;
+    int64 volume           = 14;
+    int64 total_volume     = 15;
+    int64 amount           = 16;
+    int64 total_amount     = 17;
+    int64 yesterday_volume = 18;
+    double volume_ratio    = 19;
+    double buy_price       = 20;
+    int64 buy_volume       = 21;
+    double sell_price      = 22;
+    int64 sell_volume      = 23;
+    int64 bid_orders       = 24;
+    int64 bid_volumes      = 25;
+    int64 ask_orders       = 26;
+    int64 ask_volumes      = 27;
+}
+
+// date='2021-08-25'
+// code='3682'
+// name='亞太電'
+// ts=1629901800000000000
+// open=8.05
+// high=8.39
+// low=8.0
+// close=8.2
+// price_range=0.39
+// tick_type=1
+// change_price=0.2
+// change_type=2
+// average_price=8.18
+// volume=6
+// total_volume=4659
+// amount=49199
+// total_amount=38112693
+// yesterday_volume=1578
+// volume_ratio=2.95
+// buy_price=8.19
+// buy_volume=48
+// sell_price=8.2
+// sell_volume=63
+// bid_orders=500
+// bid_volumes=134
+// ask_orders=379
+// ask_volumes=198

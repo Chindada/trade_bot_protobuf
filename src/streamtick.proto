@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package streamtick_protobuf;
+
+option go_package = "pkg/models/streamtick";
+
+message StreamTickProto {
+    string exchange = 1;
+    message TickData {
+        string code              = 1;
+        string date_time         = 2;
+        double open              = 3;
+        double avg_price         = 4;
+        double close             = 5;
+        double high              = 6;
+        double low               = 7;
+        double amount            = 8;
+        double total_amount      = 9;
+        int64 volume             = 10;
+        int64 total_volume       = 11;
+        int64 tick_type          = 12;
+        int64 chg_type           = 13;
+        double price_chg         = 14;
+        double pct_chg           = 15;
+        int64 bid_side_total_vol = 16;
+        int64 ask_side_total_vol = 17;
+        int64 bid_side_total_cnt = 18;
+        int64 ask_side_total_cnt = 19;
+        int64 suspend            = 20;
+        int64 simtrade           = 21;
+    }
+    TickData tick = 2;
+}
