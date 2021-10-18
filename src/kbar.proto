@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package kbar_protobuf;
+
+option go_package = "pkg/models/kbar";
+
+message KbarArrProto {
+    repeated KbarProto data = 1;
+}
+
+message KbarProto {
+    int64 ts     = 1;
+    double Close = 2;
+    double Open  = 3;
+    double High  = 4;
+    double Low   = 5;
+    int64 Volume = 6;
+}
