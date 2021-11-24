@@ -16,6 +16,7 @@ message EntireTickProto {
     int64 bid_volume = 5;
     double ask_price = 6;
     int64 ask_volume = 7;
+    int64 tick_type  = 8;
 }
 
 // # ts: typing.List[int]
