@@ -1,0 +1,162 @@
+syntax = "proto3";
+
+package sinopac_protobuf;
+
+option go_package = "pkg/sinopacapi";
+
+message BidAskProto {
+    string exchange = 1;
+    message BidAskData {
+        string code                 = 1;
+        string date_time            = 2;
+        repeated double bid_price   = 3;
+        repeated int64 bid_volume   = 4;
+        repeated int64 diff_bid_vol = 5;
+        repeated double ask_price   = 6;
+        repeated int64 ask_volume   = 7;
+        repeated int64 diff_ask_vol = 8;
+        int64 suspend               = 9;
+        int64 simtrade              = 10;
+    }
+    BidAskData bid_ask = 2;
+}
+
+message EntireTickArrProto {
+    repeated EntireTickProto data = 1;
+}
+
+message EntireTickProto {
+    int64 ts         = 1;
+    double close     = 2;
+    int64 volume     = 3;
+    double bid_price = 4;
+    int64 bid_volume = 5;
+    double ask_price = 6;
+    int64 ask_volume = 7;
+    int64 tick_type  = 8;
+}
+
+message KbarArrProto {
+    repeated KbarProto data = 1;
+}
+
+message KbarProto {
+    int64 ts     = 1;
+    double Close = 2;
+    double Open  = 3;
+    double High  = 4;
+    double Low   = 5;
+    int64 Volume = 6;
+}
+
+message SnapShotArrProto {
+    repeated SnapShotProto data = 1;
+}
+
+message SnapShotProto {
+    int64 ts                = 1;
+    string code             = 2;
+    string exchange         = 3;
+    double open             = 4;
+    double high             = 5;
+    double low              = 6;
+    double close            = 7;
+    string tick_type        = 8;
+    double change_price     = 9;
+    double change_rate      = 10;
+    string change_type      = 11;
+    double average_price    = 12;
+    int64 volume            = 13;
+    int64 total_volume      = 14;
+    int64 amount            = 15;
+    int64 total_amount      = 16;
+    double yesterday_volume = 17;
+    double buy_price        = 18;
+    double buy_volume       = 19;
+    double sell_price       = 20;
+    int64 sell_volume       = 21;
+    double volume_ratio     = 22;
+}
+
+message StreamTickProto {
+    string exchange = 1;
+    message TickData {
+        string code              = 1;
+        string date_time         = 2;
+        double open              = 3;
+        double avg_price         = 4;
+        double close             = 5;
+        double high              = 6;
+        double low               = 7;
+        double amount            = 8;
+        double total_amount      = 9;
+        int64 volume             = 10;
+        int64 total_volume       = 11;
+        int64 tick_type          = 12;
+        int64 chg_type           = 13;
+        double price_chg         = 14;
+        double pct_chg           = 15;
+        int64 bid_side_total_vol = 16;
+        int64 ask_side_total_vol = 17;
+        int64 bid_side_total_cnt = 18;
+        int64 ask_side_total_cnt = 19;
+        int64 suspend            = 20;
+        int64 simtrade           = 21;
+    }
+    TickData tick = 2;
+}
+
+message EventProto {
+    int64 resp_code  = 1;
+    int64 event_code = 2;
+    string info      = 3;
+    string event     = 4;
+}
+
+message TradeRecordArrProto {
+    repeated TradeRecordProto data = 1;
+}
+
+message TradeRecordProto {
+    int64 quantity    = 1;
+    double price      = 2;
+    string action     = 3;
+    string code       = 4;
+    string id         = 5;
+    string order_time = 6;
+    string status     = 7;
+}
+
+message VolumeRankArrProto {
+    repeated VolumeRankProto data = 1;
+}
+
+message VolumeRankProto {
+    string date            = 1;
+    string code            = 2;
+    string name            = 3;
+    int64 ts               = 4;
+    double open            = 5;
+    double high            = 6;
+    double low             = 7;
+    double close           = 8;
+    double price_range     = 9;
+    int64 tick_type        = 10;
+    double change_price    = 11;
+    int64 change_type      = 12;
+    double average_price   = 13;
+    int64 volume           = 14;
+    int64 total_volume     = 15;
+    int64 amount           = 16;
+    int64 total_amount     = 17;
+    int64 yesterday_volume = 18;
+    double volume_ratio    = 19;
+    double buy_price       = 20;
+    int64 buy_volume       = 21;
+    double sell_price      = 22;
+    int64 sell_volume      = 23;
+    int64 bid_orders       = 24;
+    int64 bid_volumes      = 25;
+    int64 ask_orders       = 26;
+    int64 ask_volumes      = 27;
+}
